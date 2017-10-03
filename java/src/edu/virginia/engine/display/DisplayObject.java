@@ -151,10 +151,11 @@ public class DisplayObject {
 			applyTransformations(g2d);
 
 			/* Actually draw the image, perform the pivot point translation here */
+            //g2d.translate(pivotPoint.x, pivotPoint.y);
+
 			g2d.drawImage(displayImage, 0, 0,
 					(int) (getUnscaledWidth()),
 					(int) (getUnscaledHeight()), null);
-			
 			/*
 			 * undo the transformations so this doesn't affect other display
 			 * objects
@@ -168,8 +169,9 @@ public class DisplayObject {
 	 * object
 	 * */
 	protected void applyTransformations(Graphics2D g2d) {
-        g2d.translate(position.getX(), position.getY());
-        g2d.rotate(rotation, pivotPoint.getX(), pivotPoint.getY());
+        g2d.rotate(rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
+	    g2d.translate(position.x, position.y);
+
 	}
 
 	/**
@@ -177,8 +179,10 @@ public class DisplayObject {
 	 * object
 	 * */
 	protected void reverseTransformations(Graphics2D g2d) {
-        g2d.translate(-position.getX(), -position.getY());
-        g2d.rotate(2-rotation, pivotPoint.getX(), pivotPoint.getY());
+        g2d.translate(-position.x, -position.y);
+	    g2d.rotate(-rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
+
+
 	}
 
 }
