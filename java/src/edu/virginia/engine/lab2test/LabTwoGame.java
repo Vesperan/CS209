@@ -1,10 +1,11 @@
-package edu.virginia.lab1test;
-
-import java.awt.*;
-import java.util.ArrayList;
+package edu.virginia.engine.lab2test;
 
 import edu.virginia.engine.display.Game;
 import edu.virginia.engine.display.Sprite;
+import edu.virginia.engine.display.AnimatedSprite;
+
+import java.awt.*;
+import java.util.ArrayList;
 
 import static java.awt.event.KeyEvent.*;
 
@@ -12,16 +13,16 @@ import static java.awt.event.KeyEvent.*;
  * Example game that utilizes our engine. We can create a simple prototype game with just a couple lines of code
  * although, for now, it won't be a very fun game :)
  * */
-public class LabOneGame extends Game{
+public class LabTwoGame extends Game{
 
     int framevcounter= 0;
 	/* Create a sprite object for our game. We'll use mario */
-	Sprite mario = new Sprite("Mario", "Mario.png");
-	
+	AnimatedSprite mario = new AnimatedSprite("Mario", "Mario.png", new Point(0,0));
+
 	/**
 	 * Constructor. See constructor in Game.java for details on the parameters given
 	 * */
-	public LabOneGame() {
+	public LabTwoGame() {
 		super("Lab One Test Game", 500, 300);
 	}
 	
@@ -111,7 +112,7 @@ public class LabOneGame extends Game{
 	 * that calls update() and draw() every frame
 	 * */
 	public static void main(String[] args) {
-		LabOneGame game = new LabOneGame();
+		LabTwoGame game = new LabTwoGame();
 		game.start();
 
 	}

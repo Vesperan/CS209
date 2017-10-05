@@ -118,6 +118,8 @@ public class DisplayObject {
 		return displayImage.getHeight();
 	}
 
+	public void setDisplayImage(BufferedImage di) { displayImage = di; }
+
 	public BufferedImage getDisplayImage() {
 		return this.displayImage;
 	}
