@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class AnimatedSprite extends Sprite {
 
     /* The animation that is displayed by this object */
-    private ArrayList<Animation> animations;
+    //private ArrayList<Animation> animations;
 
     /* The playing variable */
     private boolean playing = false;

@@ -182,7 +182,6 @@ public class DisplayObject {
         g2d.translate(-position.x, -position.y);
 	    g2d.rotate(-rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
 
-
 	}
 
 }
