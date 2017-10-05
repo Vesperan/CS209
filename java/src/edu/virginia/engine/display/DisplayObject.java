@@ -91,19 +91,19 @@ public class DisplayObject {
 	}
 
 //Andy 2.
- public void setVisible(Boolean vis) { this.visible = vis; }
- public Boolean getVisible() { return visible; }
+    public void setVisible(Boolean vis) { this.visible = vis; }
+    public Boolean getVisible() { return visible; }
 
-		 	public void setAlpha(float a) { this.alpha = a; }
- public float getAlpha() { return alpha; }
+    public void setAlpha(float a) { this.alpha = a; }
+    public float getAlpha() { return alpha; }
 
-		 	public void setOldAlpha(float oa) { this.oldAlpha = oa; }
- public float getOldAlpha() { return oldAlpha; }
+    public void setOldAlpha(float oa) { this.oldAlpha = oa; }
+    public float getOldAlpha() { return oldAlpha; }
 
-		public void setScaleX(double sx) { this.scaleX = sx; }
- public double getScaleX() { return scaleX; }
+    public void setScaleX(double sx) { scaleX = sx; }
+    public double getScaleX() { return scaleX; }
 
-		 	public void setScaleY(double sy) { this.scaleX = sy; }
+    public void setScaleY(double sy) { scaleY = sy; }
  	public double getScaleY() { return scaleY; }
 	/**
 	 * Returns the unscaled width and height of this display object
@@ -201,10 +201,9 @@ public class DisplayObject {
 	protected void applyTransformations(Graphics2D g2d) {
         g2d.rotate(rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
         g2d.translate(position.x, position.y);
-        g2d.scale(this.scaleX, this.scaleY);
+        g2d.scale(scaleX, scaleY);
         float curAlpha;
-        this.oldAlpha = curAlpha = ((AlphaComposite)
-		g2d.getComposite()).getAlpha();
+        this.oldAlpha = curAlpha = ((AlphaComposite) g2d.getComposite()).getAlpha();
         g2d.setComposite(AlphaComposite.getInstance(3,curAlpha * this.alpha));
 	}
 
@@ -215,7 +214,6 @@ public class DisplayObject {
 	protected void reverseTransformations(Graphics2D g2d) {
         g2d.translate(-position.x, -position.y);
 	    g2d.rotate(-rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
-        g2d.scale(1/this.scaleX, 1/this.scaleY);
         g2d.setComposite(AlphaComposite.getInstance(3, this.oldAlpha));
 
 	}

@@ -14,6 +14,7 @@ import static java.awt.event.KeyEvent.*;
  * */
 public class LabOneGame extends Game{
 
+    int framevcounter= 0;
 	/* Create a sprite object for our game. We'll use mario */
 	Sprite mario = new Sprite("Mario", "Mario.png");
 	
@@ -31,6 +32,8 @@ public class LabOneGame extends Game{
 	@Override
 	public void update(ArrayList<Integer> pressedKeys){
 		super.update(pressedKeys);
+
+		framevcounter++;
 
         if(pressedKeys.contains(VK_L)){ mario.setPivotPoint(new Point((int) mario.getPivotPoint().x+5,
                 (int) mario.getPivotPoint().y)); }
@@ -53,18 +56,37 @@ public class LabOneGame extends Game{
         if(pressedKeys.contains(VK_W)){ mario.setRotation(mario.getRotation()+(Math.PI/50)); }
         if(pressedKeys.contains(VK_Q)){ mario.setRotation(mario.getRotation()-(Math.PI/50)); }
 
-		if(pressedKeys.contains(VK_V)) { mario.setVisible(mario.getVisible()^true); }
+		if(pressedKeys.contains(VK_V) && framevcounter > 10)
+		{
+		    mario.setVisible(mario.getVisible()^true);
+		    framevcounter = 0;
+		}
 
-				        if(pressedKeys.contains(VK_Z) && mario.getAlpha()<1) { mario.setAlpha(mario.getAlpha() + (float).1);}
-				if(pressedKeys.contains(VK_X)&& mario.getAlpha()>0) { mario.setAlpha(mario.getAlpha() - (float).1);}
+        if(pressedKeys.contains(VK_Z))
+        {
+            if(mario.getAlpha() + (float).1 < 1)
+                mario.setAlpha(mario.getAlpha() + (float).1);
+            else
+                mario.setAlpha((float) 1);
+        }
 
-						if(pressedKeys.contains(VK_A)) {
-			       	mario.setScaleX(mario.getScaleX() + .1);
-						mario.setScaleY(mario.getScaleY() + .1);}
-				if(pressedKeys.contains(VK_S)) {
-						mario.setScaleX(mario.getScaleX() - .1);
-						mario.setScaleY(mario.getScaleY() - .1);
-					}
+        if(pressedKeys.contains(VK_X))
+        {
+            if(mario.getAlpha()>0.1)
+                mario.setAlpha(mario.getAlpha() - (float).1);
+            else
+                mario.setAlpha((float) 0);
+        }
+
+        if(pressedKeys.contains(VK_A)) {
+            mario.setScaleY(mario.getScaleY() + .1);
+            mario.setScaleX(mario.getScaleX() + .1);
+        }
+
+        if(pressedKeys.contains(VK_S)) {
+            mario.setScaleX(mario.getScaleX() - .1);
+            mario.setScaleY(mario.getScaleY() - .1);
+        }
 
 		/* Make sure mario is not null. Sometimes Swing can auto cause an extra frame to go before everything is initialized */
 		if(mario != null) mario.update(pressedKeys);
