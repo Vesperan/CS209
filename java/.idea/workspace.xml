@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8bb4275-7cd3-48d6-9a07-13ecce7335f7" name="Default" comment="" />
+    <list default="true" readonly="true" id="c8bb4275-7cd3-48d6-9a07-13ecce7335f7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/AnimatedSprite.class" afterPath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/AnimatedSprite.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/DisplayObject.class" afterPath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/DisplayObject.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/Game$1.class" afterPath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/Game$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/Game.class" afterPath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/GameScenePanel.class" afterPath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/GameScenePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/Sprite.class" afterPath="$PROJECT_DIR$/out/production/cs209/edu/virginia/engine/display/Sprite.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java" afterPath="$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java" afterPath="$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,109 +21,38 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-<<<<<<< HEAD
-
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LabOneGame.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-387">
-              <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="23" />
-
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="LabOneGame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="65" column="47" lean-forward="false" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
-
-=======
-    <leaf>
       <file leaf-file-name="LabOneGame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="52" column="89" lean-forward="false" selection-start-line="52" selection-start-column="89" selection-end-line="52" selection-end-column="89" />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
+            <state relative-caret-position="231">
+              <caret line="58" column="66" lean-forward="false" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DisplayObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-
-            <state relative-caret-position="357">
-              <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-
-            <state relative-caret-position="3675">
+            <state relative-caret-position="2235">
               <caret line="171" column="13" lean-forward="false" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
-
-=======
-            <state relative-caret-position="116">
-              <caret line="171" column="13" lean-forward="true" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-
-      <file leaf-file-name="Sprite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="5" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
-              <folding>
-                <element signature="e#393#394#0" expanded="true" />
-                <element signature="e#424#425#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnimatedSprite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/AnimatedSprite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-
-      <file leaf-file-name="DisplayObject.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-              <folding />
-
-=======
       <file leaf-file-name="DisplayObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="171" column="67" lean-forward="false" selection-start-line="171" selection-start-column="67" selection-end-line="171" selection-end-column="67" />
-              <folding>
-                <element signature="e#850#851#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-              </folding>
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
+            <state relative-caret-position="975">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -124,6 +63,9 @@
       <find>pressed</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -132,28 +74,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java" />
-        <option value="$PROJECT_DIR$/src/engine/display/Sprite.java" />
-        <option value="$PROJECT_DIR$/src/edu/virginia/engine/display/AnimatedSprite.java" />
         <option value="$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java" />
+        <option value="$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="358" />
+    <option name="x" value="116" />
     <option name="y" value="23" />
-<<<<<<< HEAD
-
-    <option name="width" value="922" />
-    <option name="height" value="733" />
-
-    <option name="width" value="1771" />
-    <option name="height" value="982" />
-
-=======
-    <option name="width" value="1140" />
-    <option name="height" value="733" />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
+    <option name="width" value="946" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -170,19 +100,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
-
       <pane id="Scope" />
       <pane id="Scratches" />
-
-      <pane id="AndroidView" />
-
-=======
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,49 +136,16 @@
               <item name="engine" type="462c0819:PsiDirectoryNode" />
               <item name="display" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="virginia" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="virginia" type="462c0819:PsiDirectoryNode" />
-              <item name="lab1test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-<<<<<<< HEAD
-
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-    </panes>
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
-
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-
   </component>
-=======
-    </panes>
-  </component>
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -381,6 +268,10 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Andy\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c8bb4275-7cd3-48d6-9a07-13ecce7335f7" name="Default" comment="" />
@@ -392,82 +283,64 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
-
-    <frame x="358" y="23" width="922" height="733" extended-state="0" />
+    <frame x="116" y="23" width="946" height="773" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294423" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25813448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-
-    <frame x="138" y="23" width="1771" height="982" extended-state="0" />
-=======
-    <frame x="138" y="23" width="1140" height="733" extended-state="0" />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
-    <editor active="true" />
-    <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13321899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1326934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-
-=======
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20877193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39939487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-=======
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294423" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39939487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1326934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -476,9 +349,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-
           <url>file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java</url>
-          <line>56</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -489,19 +361,53 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-
           <url>file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java</url>
           <line>132</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java</url>
+          <line>173</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java</url>
+          <line>174</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="65" column="47" lean-forward="false" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="171" column="13" lean-forward="false" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -510,12 +416,6 @@
         </state>
       </provider>
     </entry>
-
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2580">
-          <caret line="172" column="46" lean-forward="true" selection-start-line="172" selection-start-column="8" selection-end-line="172" selection-end-column="46" />
-
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3725">
@@ -528,159 +428,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3625">
           <caret line="171" column="67" lean-forward="false" selection-start-line="171" selection-start-column="67" selection-end-line="171" selection-end-column="67" />
-
-          <folding />
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/AnimatedSprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2565">
-          <caret line="171" column="13" lean-forward="false" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-
-        <state relative-caret-position="285">
-          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/AnimatedSprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-
-        <state relative-caret-position="90">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-<<<<<<< HEAD
-
-=======
-          <folding />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-
-        <state relative-caret-position="2565">
-          <caret line="171" column="13" lean-forward="false" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2730">
-          <caret line="182" column="78" lean-forward="false" selection-start-line="182" selection-start-column="78" selection-end-line="182" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2235">
-          <caret line="171" column="13" lean-forward="true" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
-
-        <state relative-caret-position="3675">
-          <caret line="171" column="13" lean-forward="false" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
-
-=======
-        <state relative-caret-position="116">
-          <caret line="171" column="13" lean-forward="true" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-
-        <state relative-caret-position="2175">
-          <caret line="171" column="67" lean-forward="false" selection-start-line="171" selection-start-column="67" selection-end-line="171" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2235">
-          <caret line="171" column="13" lean-forward="false" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
+        <state relative-caret-position="120">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/GameScenePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="144">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
@@ -690,75 +452,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/util/GameClock.java" />
-    <entry file="file://$PROJECT_DIR$/src/engine/display/Game.java" />
-    <entry file="file://$PROJECT_DIR$/src/engine/display/DisplayObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/engine/display/AnimatedSprite.java" />
-    <entry file="file://$PROJECT_DIR$/src/engine/display/GameScenePanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/engine/display/Sprite.java" />
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/AnimatedSprite.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-          </folding>
-
-        <state relative-caret-position="283">
-          <caret line="65" column="47" lean-forward="false" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+        <state relative-caret-position="2235">
+          <caret line="171" column="13" lean-forward="false" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
           <folding />
-
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/engine/display/DisplayObject.java">
-
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+        <state relative-caret-position="975">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="23" />
-
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-
-=======
-        <state relative-caret-position="107">
-          <caret line="171" column="67" lean-forward="false" selection-start-line="171" selection-start-column="67" selection-end-line="171" selection-end-column="67" />
-          <folding>
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/virginia/lab1test/LabOneGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="52" column="89" lean-forward="false" selection-start-line="52" selection-start-column="89" selection-end-line="52" selection-end-column="89" />
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
+        <state relative-caret-position="231">
+          <caret line="58" column="66" lean-forward="false" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
           <folding />
         </state>
       </provider>

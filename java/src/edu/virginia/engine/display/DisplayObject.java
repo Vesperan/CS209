@@ -29,6 +29,22 @@ public class DisplayObject {
 	/* The rotation amount in radians*/
 	private double rotation = 0;
 
+	//Andy code Partner 2 1. and 3.
+ 	//Toggles if display object (mario) should be visible
+		 	private Boolean visible = true;
+
+		//Current value for measuring transparency of the object
+		 	private float alpha = 1.0f;
+
+		 	//Transparency of the object in the previous frame
+		 	private float oldAlpha = 0.0f;
+
+		 //Scales the image along x-axis
+		 	private double scaleX = 1.0;
+
+		 	//Scales the image along y-axis
+		 	private double scaleY = 1.0;
+
 	/**
 	 * Constructors: can pass in the id OR the id and image's file path and
 	 * position OR the id and a buffered image and position
@@ -74,7 +90,21 @@ public class DisplayObject {
 		return rotation;
 	}
 
+//Andy 2.
+ public void setVisible(Boolean vis) { this.visible = vis; }
+ public Boolean getVisible() { return visible; }
 
+		 	public void setAlpha(float a) { this.alpha = a; }
+ public float getAlpha() { return alpha; }
+
+		 	public void setOldAlpha(float oa) { this.oldAlpha = oa; }
+ public float getOldAlpha() { return oldAlpha; }
+
+		public void setScaleX(double sx) { this.scaleX = sx; }
+ public double getScaleX() { return scaleX; }
+
+		 	public void setScaleY(double sy) { this.scaleX = sy; }
+ 	public double getScaleY() { return scaleY; }
 	/**
 	 * Returns the unscaled width and height of this display object
 	 * */
@@ -140,8 +170,8 @@ public class DisplayObject {
 	 * every frame.
 	 * */
 	public void draw(Graphics g) {
-		
-		if (displayImage != null) {
+
+		if (displayImage != null && this.visible == true) {
 			
 			/*
 			 * Get the graphics and apply this objects transformations
@@ -169,22 +199,13 @@ public class DisplayObject {
 	 * object
 	 * */
 	protected void applyTransformations(Graphics2D g2d) {
-
         g2d.rotate(rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
-	    g2d.translate(position.x, position.y);
-
-
-        g2d.translate(position.getX(), position.getY());
-        g2d.rotate(rotation, pivotPoint.getX(), pivotPoint.getY());
-<<<<<<< HEAD
+        g2d.translate(position.x, position.y);
         g2d.scale(this.scaleX, this.scaleY);
         float curAlpha;
         this.oldAlpha = curAlpha = ((AlphaComposite)
 		g2d.getComposite()).getAlpha();
         g2d.setComposite(AlphaComposite.getInstance(3,curAlpha * this.alpha));
-
-=======
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
 	}
 
 	/**
@@ -192,19 +213,11 @@ public class DisplayObject {
 	 * object
 	 * */
 	protected void reverseTransformations(Graphics2D g2d) {
-
         g2d.translate(-position.x, -position.y);
 	    g2d.rotate(-rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
-
-
-        g2d.translate(-position.getX(), -position.getY());
-        g2d.rotate(2-rotation, pivotPoint.getX(), pivotPoint.getY());
-<<<<<<< HEAD
         g2d.scale(1/this.scaleX, 1/this.scaleY);
         g2d.setComposite(AlphaComposite.getInstance(3, this.oldAlpha));
 
-=======
->>>>>>> parent of 2c626b4... finish lab1 partner 2 stuff
 	}
 
 }
