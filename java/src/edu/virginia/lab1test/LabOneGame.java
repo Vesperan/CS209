@@ -53,18 +53,6 @@ public class LabOneGame extends Game{
         if(pressedKeys.contains(VK_W)){ mario.setRotation(mario.getRotation()+(Math.PI/50)); }
         if(pressedKeys.contains(VK_Q)){ mario.setRotation(mario.getRotation()-(Math.PI/50)); }
 
-        if(pressedKeys.contains(VK_V)) { mario.setVisible(mario.getVisible()^true); }
-
-        if(pressedKeys.contains(VK_Z)) { mario.setAlpha(mario.getAlpha() + .1);}
-		if(pressedKeys.contains(VK_X)) { mario.setAlpha(mario.getAlpha() - .1);}
-
-		if(pressedKeys.contains(VK_A)) {
-        	mario.setScaleX(mario.getScaleX() + .1);
-			mario.setScaleY(mario.getScaleY() + .1);}
-		if(pressedKeys.contains(VK_S)) {
-			mario.setScaleX(mario.getScaleX() - .1);
-			mario.setScaleY(mario.getScaleY() - .1);
-		}
 		/* Make sure mario is not null. Sometimes Swing can auto cause an extra frame to go before everything is initialized */
 		if(mario != null) mario.update(pressedKeys);
 
