@@ -75,4 +75,52 @@ public class AnimatedSprite extends Sprite {
             frameCounter++;
         }
     }
+
+    //Andy Partner 2
+    //2.1
+    public void initializeFrames(String image1, String image2, String image3) {
+        frames.add(readImage(image1));
+        frames.add(readImage(image2));
+        frames.add(readImage(image3));
+
+    }
+    //initializeFrames("mario_walk_0.jpg");
+    //initializeFrames("mario_walk_1.jpg");
+    //initializeFrames("mario_walk_2.jpg"); ... and so forth if multiple images
+
+    //Partner 2.2
+    public Animation getAnimation(String checkid) {
+        for (Animation name : animations)    //animations is a private arraylist in animatedSprite.java. Can't be accessed if getter is in Animation.java
+            if (name.id.equals(checkid))    //Animation's id is a private variable in Animation.java ... can't be accessed if getter is in AnimatedSprite.java?
+                return name;
+        return new Animation("none", 0, 0); //What do I return if the one im searching for is not found? need to return some Animation?
+    }
+
+    //Partner 2.3
+    public void animate(Animation a) {
+        this.startFrame = a.getStartFrame();
+        this.endFrame = a.getEndFrame();
+    }
+    public Animation animate(String id) {
+        return getAnimation(id);
+    }
+    public void animate(int sf, int ef) {
+        this.startFrame = sf;
+        this.endFrame = ef;
+    }
+
+    //Partner 2.4 this doesnt work
+    public void stopAnimation(int framenum) {//says to use code from inializeFrames() to extract image?
+        //stops animation at this frame.
+        if (currentFrame == framenum)
+            frames = null;
+            //super.stop(); //could also call stop() in Game.java which stops animation. DisplayObject -> Game,Sprite.  Sprite-> AnimatedSprite
+
+    }
+    public void stopAnimation() { // no parameter
+        //stops animation at the startFrame
+        if (this.currentFrame == startFrame)
+            frames = null;
+    }
 }
+
