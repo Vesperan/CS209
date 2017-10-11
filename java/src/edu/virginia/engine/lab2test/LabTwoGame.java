@@ -1,5 +1,6 @@
 package edu.virginia.engine.lab2test;
 
+import edu.virginia.engine.display.Animation;
 import edu.virginia.engine.display.Game;
 import edu.virginia.engine.display.Sprite;
 import edu.virginia.engine.display.AnimatedSprite;
@@ -17,13 +18,13 @@ public class LabTwoGame extends Game{
 
     int framevcounter= 0;
 	/* Create a sprite object for our game. We'll use mario */
-	AnimatedSprite mario = new AnimatedSprite("Mario", "Mario.png", new Point(0,0));
+	AnimatedSprite mario = new AnimatedSprite("Mario", "mario_walk_0.png", new Point(50,50));
 
 	/**
 	 * Constructor. See constructor in Game.java for details on the parameters given
 	 * */
 	public LabTwoGame() {
-		super("Lab One Test Game", 500, 300);
+		super("Lab One Test Game", 500, 650);
 	}
 	
 	/**
@@ -35,6 +36,18 @@ public class LabTwoGame extends Game{
 		super.update(pressedKeys);
 
 		framevcounter++;
+
+		if(pressedKeys.contains(VK_O)){ mario.setAnimationSpeed(mario.getAnimationSpeed() + 5);
+		System.out.println(mario.getAnimationSpeed());
+		}
+		if(pressedKeys.contains(VK_P)){ mario.setAnimationSpeed(mario.getAnimationSpeed() - 5);  }
+        if(pressedKeys.contains(VK_Y)) {
+                mario.stopAnimation(mario.getCurrentFrame());
+        }
+		if(pressedKeys.contains(VK_T)) {
+                mario.setPlaying(true);
+        }
+		if(pressedKeys.contains(VK_R)){ mario.stopAnimation(); }
 
         if(pressedKeys.contains(VK_L)){ mario.setPivotPoint(new Point((int) mario.getPivotPoint().x+5,
                 (int) mario.getPivotPoint().y)); }
@@ -104,7 +117,15 @@ public class LabTwoGame extends Game{
 		super.draw(g);
 		
 		/* Same, just check for null in case a frame gets thrown in before Mario is initialized */
-		if(mario != null) mario.draw(g);
+		if(mario != null){
+		    String[] frames = {"mario_walk_0.png", "mario_walk_1.png", "mario_walk_2.png"};
+		    mario.initializeFrames(frames);
+
+		    mario.setAnimation(new Animation("walk", 0, 2));
+            mario.animate(mario.getAnimation("walk"));
+
+		    mario.draw(g);
+        }
 	}
 
 	/**
