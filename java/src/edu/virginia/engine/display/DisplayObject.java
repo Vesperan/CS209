@@ -14,6 +14,9 @@ import javax.imageio.ImageIO;
  * */
 public class DisplayObject {
 
+	//private reference to parent display object
+	private DisplayObject parent;
+
 	/* All DisplayObject have a unique id */
 	private String id;
 
@@ -58,6 +61,12 @@ public class DisplayObject {
 		this.setImage(fileName);
 	}
 
+	public DisplayObject getParent() {
+		return parent;
+	}
+	public void setParent(DisplayObject p) {
+		this.parent = p;
+	}
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -219,5 +228,7 @@ public class DisplayObject {
         g2d.setComposite(AlphaComposite.getInstance(3, this.oldAlpha));
 
 	}
+
+
 
 }

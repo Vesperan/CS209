@@ -59,7 +59,8 @@ public class LabTwoGame extends Game{
                 (int) mario.getPivotPoint().y+5)); }
 
         if(pressedKeys.contains(VK_RIGHT)){ mario.setPosition(new Point((int) mario.getPosition().x+5,
-                (int) mario.getPosition().y)); }
+                (int) mario.getPosition().y));
+				mario.setPlaying(true); }
         if(pressedKeys.contains(VK_LEFT)){ mario.setPosition(new Point((int) mario.getPosition().x-5,
                 (int) mario.getPosition().y)); }
         if(pressedKeys.contains(VK_UP)){ mario.setPosition(new Point((int) mario.getPosition().x,

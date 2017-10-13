@@ -84,13 +84,11 @@ public class AnimatedSprite extends Sprite {
     //2.1
     public void initializeFrames(String[] images) {
         for(String s : images)
-        frames.add(readImage(s));
+            frames.add(readImage(s));
     }
 
     //Partner 2.2
     public Animation getAnimation(String checkid) {
-        //animations is a private arraylist in animatedSprite.java.
-        // Can't be accessed if getter is in Animation.java
         for (Animation a : animations)
             if (a.getId().equals(checkid))
                 return a;
