@@ -29,12 +29,20 @@ public class Game extends DisplayObjectContainer implements ActionListener, KeyL
 
 	/* Timer that this game runs on */
 	private Timer gameTimer;
+
+	/* Timer that this game runs on */
+	private int width;
+
+	/* Timer that this game runs on */
+	private int height;
 	
 	/* The JPanel for this game */
 	private GameScenePanel scenePanel;
 
-	public Game(String gameId, int width, int height) {
+	public Game(String gameId, int w, int h) {
 		super(gameId);
+		width = w;
+		height = h;
 		
 		setUpMainFrame(gameId, width, height);
 		
@@ -188,5 +196,15 @@ public class Game extends DisplayObjectContainer implements ActionListener, KeyL
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getUnscaledWidth() {
+		return width;
+	}
+
+	@Override
+	public int getUnscaledHeight() {
+		return height;
 	}
 }

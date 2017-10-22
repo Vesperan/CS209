@@ -14,39 +14,38 @@ import javax.imageio.ImageIO;
  * */
 public class DisplayObject {
 
-	//private reference to parent display object
+	//Private reference to parent display object
 	private DisplayObject parent;
 
-	/* All DisplayObject have a unique id */
+	//All DisplayObject have a unique id
 	private String id;
 
-	/* The image that is displayed by this object */
+	//The image that is displayed by this object
 	private BufferedImage displayImage;
 
-	/* The position variable */
+	//The position variable
 	private Point position = new Point(0,0);
 
-	/* The pivot point variable */
+	//The pivot point variable
 	private Point pivotPoint = new Point(0,0);
 
-	/* The rotation amount in radians*/
+	//The rotation amount in radians
 	private double rotation = 0;
 
-	//Andy code Partner 2 1. and 3.
- 	//Toggles if display object (mario) should be visible
-		 	private Boolean visible = true;
+ 	//Toggles if display object should be visible
+	private Boolean visible = true;
 
-		//Current value for measuring transparency of the object
-		 	private float alpha = 1.0f;
+	//Current value for measuring transparency of the object
+	private float alpha = 1.0f;
 
-		 	//Transparency of the object in the previous frame
-		 	private float oldAlpha = 0.0f;
+	//Transparency of the object in the previous frame
+	private float oldAlpha = 0.0f;
 
-		 //Scales the image along x-axis
-		 	private double scaleX = 1.0;
+	//Scales the image along x-axis
+	private double scaleX = 1.0;
 
-		 	//Scales the image along y-axis
-		 	private double scaleY = 1.0;
+	//Scales the image along y-axis
+	private double scaleY = 1.0;
 
 	/**
 	 * Constructors: can pass in the id OR the id and image's file path and
@@ -61,16 +60,24 @@ public class DisplayObject {
 		this.setImage(fileName);
 	}
 
+	public DisplayObject(String id, String fileName, DisplayObject p, Point pos) {
+        this.setId(id);
+        this.setImage(fileName);
+        parent=p;
+        position=pos;
+    }
+
+    //Getters and Setters
 	public DisplayObject getParent() {
 		return parent;
 	}
 	public void setParent(DisplayObject p) {
 		this.parent = p;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public String getId() {
 		return id;
 	}
@@ -78,7 +85,6 @@ public class DisplayObject {
 	public void setPosition(Point pos) {
 		position = pos;
 	}
-
 	public Point getPosition() {
 		return position;
 	}
@@ -86,7 +92,6 @@ public class DisplayObject {
 	public void setPivotPoint(Point pp) {
 		pivotPoint = pp;
 	}
-
 	public Point getPivotPoint() {
 		return pivotPoint;
 	}
@@ -94,12 +99,10 @@ public class DisplayObject {
 	public void setRotation(double rotate) {
 		rotation = rotate;
 	}
-
 	public double getRotation() {
 		return rotation;
 	}
 
-//Andy 2.
     public void setVisible(Boolean vis) { this.visible = vis; }
     public Boolean getVisible() { return visible; }
 
@@ -114,24 +117,12 @@ public class DisplayObject {
 
     public void setScaleY(double sy) { scaleY = sy; }
  	public double getScaleY() { return scaleY; }
-	/**
-	 * Returns the unscaled width and height of this display object
-	 * */
-	public int getUnscaledWidth() {
-		if(displayImage == null) return 0;
-		return displayImage.getWidth();
-	}
 
-	public int getUnscaledHeight() {
-		if(displayImage == null) return 0;
-		return displayImage.getHeight();
-	}
-
-	public void setDisplayImage(BufferedImage di) { displayImage = di; }
-
-	public BufferedImage getDisplayImage() {
-		return this.displayImage;
-	}
+ 	//Image-related methods
+    public void setDisplayImage(BufferedImage di) { displayImage = di; }
+    public BufferedImage getDisplayImage() {
+        return this.displayImage;
+    }
 
 	protected void setImage(String imageName) {
 		if (imageName == null) {
@@ -142,7 +133,6 @@ public class DisplayObject {
 			System.err.println("[DisplayObject.setImage] ERROR: " + imageName + " does not exist!");
 		}
 	}
-
 
 	/**
 	 * Helper function that simply reads an image from the given image name
@@ -165,15 +155,32 @@ public class DisplayObject {
 		displayImage = image;
 	}
 
+    //Returns the unscaled width and height of this display object
+    public int getUnscaledWidth() {
+        if(displayImage == null) return 0;
+        return displayImage.getWidth();
+    }
+    public int getUnscaledHeight() {
+        if(displayImage == null) return 0;
+        return displayImage.getHeight();
+    }
+
+    //Returns the scaled width and height of this display object
+    public int getScaledWidth() {
+        if(displayImage == null) return 0;
+        return (int)(scaleX*displayImage.getWidth());
+    }
+    public int getScaledHeight() {
+        if(displayImage == null) return 0;
+        return (int)(scaleY*displayImage.getHeight());
+    }
 
 	/**
 	 * Invoked on every frame before drawing. Used to update this display
 	 * objects state before the draw occurs. Should be overridden if necessary
 	 * to update objects appropriately.
 	 * */
-	protected void update(ArrayList<Integer> pressedKeys) {
-		
-	}
+	protected void update(ArrayList<Integer> pressedKeys) { }
 
 	/**
 	 * Draws this image. This should be overloaded if a display object should
@@ -184,24 +191,18 @@ public class DisplayObject {
 
 		if (displayImage != null && this.visible == true) {
 			
-			/*
-			 * Get the graphics and apply this objects transformations
-			 * (rotation, etc.)
-			 */
+			//Get the graphics and apply this objects transformations (rotation, etc.)
 			Graphics2D g2d = (Graphics2D) g;
-			applyTransformations(g2d);
+			//Commented out because planet transformations happen separately
+			//applyTransformations(g2d);
 
-			/* Actually draw the image, perform the pivot point translation here */
-            //g2d.translate(pivotPoint.x, pivotPoint.y);
-
+            //Actually draw the image
 			g2d.drawImage(displayImage, 0, 0,
 					(int) (getUnscaledWidth()),
 					(int) (getUnscaledHeight()), null);
-			/*
-			 * undo the transformations so this doesn't affect other display
-			 * objects
-			 */
-			reverseTransformations(g2d);
+
+			//undo the transformations so this doesn't affect other DisplayObjects
+			//reverseTransformations(g2d);
 		}
 	}
 
@@ -210,9 +211,12 @@ public class DisplayObject {
 	 * object
 	 * */
 	protected void applyTransformations(Graphics2D g2d) {
-        g2d.rotate(rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
         g2d.translate(position.x, position.y);
-        g2d.scale(scaleX, scaleY);
+        g2d.rotate(rotation, pivotPoint.x, pivotPoint.y);
+
+        //Commented out because planets are scaled a special way
+        //g2d.scale(scaleX, scaleY);
+
         float curAlpha;
         this.oldAlpha = curAlpha = ((AlphaComposite) g2d.getComposite()).getAlpha();
         g2d.setComposite(AlphaComposite.getInstance(3,curAlpha * this.alpha));
@@ -223,12 +227,18 @@ public class DisplayObject {
 	 * object
 	 * */
 	protected void reverseTransformations(Graphics2D g2d) {
+        g2d.rotate(-rotation, pivotPoint.x, pivotPoint.y);
         g2d.translate(-position.x, -position.y);
-	    g2d.rotate(-rotation, position.x+pivotPoint.x, position.y+pivotPoint.y);
         g2d.setComposite(AlphaComposite.getInstance(3, this.oldAlpha));
 
 	}
 
-
+	//Debugging methods for coordinate systems
+    public Point localToGlobal(Point p){
+		return new Point(p.x + parent.position.x,p.y + parent.position.y);
+	}
+	public Point globalToLocal(Point p){
+        return new Point(p.x - parent.position.x,p.y - parent.position.y);
+    }
 
 }

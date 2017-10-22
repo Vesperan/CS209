@@ -24,7 +24,7 @@ public class LabTwoGame extends Game{
 	 * Constructor. See constructor in Game.java for details on the parameters given
 	 * */
 	public LabTwoGame() {
-		super("Lab One Test Game", 500, 650);
+		super("Lab Two Test Game", 500, 650);
 	}
 	
 	/**
