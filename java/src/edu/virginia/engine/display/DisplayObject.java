@@ -47,6 +47,9 @@ public class DisplayObject {
 	//Scales the image along y-axis
 	private double scaleY = 1.0;
 
+	//Hitbox instance variable
+	private Rectangle hitbox;
+
 	/**
 	 * Constructors: can pass in the id OR the id and image's file path and
 	 * position OR the id and a buffered image and position
@@ -117,6 +120,22 @@ public class DisplayObject {
 
     public void setScaleY(double sy) { scaleY = sy; }
  	public double getScaleY() { return scaleY; }
+
+ 	public void setHitbox(int x, int y, int width, int height) { hitbox = new Rectangle(x,y,width,height); }
+ 	public Rectangle getHitbox() { return hitbox; }
+
+ 	public boolean collidesWith(DisplayObject other) {
+		//if one rectangle hitbox is on left side of other
+		if (this.hitbox.getX() > other.hitbox.getX()+other.hitbox.getWidth() ||
+				other.hitbox.getX() > this.hitbox.getX()+this.hitbox.getWidth())
+			return false;
+		//if one rectangle hitbox is above other
+		if (this.hitbox.getY() < other.hitbox.getY() + other.hitbox.getHeight() ||
+				other.hitbox.getY() < this.hitbox.getY() + this.hitbox.getHeight())
+			return false;
+		System.out.println("COLLISON");
+		return true;
+	}
 
  	//Image-related methods
     public void setDisplayImage(BufferedImage di) { displayImage = di; }
