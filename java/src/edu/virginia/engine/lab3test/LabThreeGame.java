@@ -207,7 +207,6 @@ public class LabThreeGame extends Game{
 
 	    //Set black background
         g2d.setColor(Color.black);
-        g2d.setBackground(Color.black);
         g2d.fillRect(0, 0, 750, 750);
 
         //Set star background

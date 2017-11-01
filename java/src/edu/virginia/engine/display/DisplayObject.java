@@ -48,7 +48,7 @@ public class DisplayObject {
 	private double scaleY = 1.0;
 
 	//Hitbox instance variable
-	private Rectangle hitbox;
+	private Hitbox hitbox;
 
 	/**
 	 * Constructors: can pass in the id OR the id and image's file path and
@@ -121,24 +121,39 @@ public class DisplayObject {
     public void setScaleY(double sy) { scaleY = sy; }
  	public double getScaleY() { return scaleY; }
 
- 	public void setHitbox(int x, int y, int width, int height) { hitbox = new Rectangle(x,y,width,height); }
- 	public Rectangle getHitbox() { return hitbox; }
+    public Hitbox getHitbox() { return hitbox; }
+    public void setHitbox(double x, double y, String filename)
+    {
+        hitbox = new Hitbox(this, new Point(0,0), x, y, filename);
+    }
 
- 	public boolean collidesWith(DisplayObject other) {
+    public Point toGlobal(Point p, DisplayObject parent){
+	    return  new Point(p.x + parent.getPosition().x, p.y + parent.getPosition().y);
+    }
+
+    public boolean collidesWith(DisplayObject other) {
+
+        Point myOrigin = toGlobal(this.getHitbox().getPosition(), this);
+        Point theirOrigin = toGlobal(other.getHitbox().getPosition(), other);
+
+        double myHeight = this.getHitbox().getBoxWidth();
+        double myWidth = this.getHitbox().getBoxHeight();
+        double theirHeight = other.getHitbox().getBoxWidth();
+        double theirWidth = other.getHitbox().getBoxHeight();
+
+//        System.out.println("mario " + myOrigin.x + ", " + myOrigin.y);
+//        System.out.println("goomba " + theirOrigin.x + ", " + theirOrigin.y);
+
 		//if one rectangle hitbox is on left side of other
-		if (this.hitbox.getX() > other.hitbox.getX()+other.hitbox.getWidth() ||
-				other.hitbox.getX() > this.hitbox.getX()+this.hitbox.getWidth())
-			return false;
-		//if one rectangle hitbox is above other
-		if (this.hitbox.getY() < other.hitbox.getY() + other.hitbox.getHeight() ||
-				other.hitbox.getY() < this.hitbox.getY() + this.hitbox.getHeight())
-			return false;
-		System.out.println("COLLISON");
+		if (myOrigin.x > theirOrigin.x+theirWidth || theirOrigin.x > myOrigin.x+myWidth
+                || myOrigin.y > theirOrigin.y + theirHeight || theirOrigin.y > myOrigin.y + myHeight)
+		    return false;
 		return true;
 	}
 
  	//Image-related methods
     public void setDisplayImage(BufferedImage di) { displayImage = di; }
+
     public BufferedImage getDisplayImage() {
         return this.displayImage;
     }
@@ -229,12 +244,13 @@ public class DisplayObject {
 	 * Applies transformations for this display object to the given graphics
 	 * object
 	 * */
-	protected void applyTransformations(Graphics2D g2d) {
+	public void applyTransformations(Graphics2D g2d) {
+        //remove position.x and position.y for planets
+        g2d.rotate(rotation, position.x + pivotPoint.x, position.y + pivotPoint.y);
         g2d.translate(position.x, position.y);
-        g2d.rotate(rotation, pivotPoint.x, pivotPoint.y);
 
         //Commented out because planets are scaled a special way
-        //g2d.scale(scaleX, scaleY);
+        g2d.scale(scaleX, scaleY);
 
         float curAlpha;
         this.oldAlpha = curAlpha = ((AlphaComposite) g2d.getComposite()).getAlpha();
@@ -245,9 +261,10 @@ public class DisplayObject {
 	 * Reverses transformations for this display object to the given graphics
 	 * object
 	 * */
-	protected void reverseTransformations(Graphics2D g2d) {
-        g2d.rotate(-rotation, pivotPoint.x, pivotPoint.y);
+	public void reverseTransformations(Graphics2D g2d) {
+        //remove position.x and position.y for planets
         g2d.translate(-position.x, -position.y);
+        g2d.rotate(-rotation, position.x + pivotPoint.x, position.y + pivotPoint.y);
         g2d.setComposite(AlphaComposite.getInstance(3, this.oldAlpha));
 
 	}

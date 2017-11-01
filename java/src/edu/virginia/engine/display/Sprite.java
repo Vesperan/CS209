@@ -13,10 +13,9 @@ public class Sprite extends DisplayObjectContainer {
 	public Sprite(String id) {
 		super(id);
 	}
-
-	public Sprite(String id, String imageFileName) {
-		super(id, imageFileName);
-	}
+    public Sprite(String id, String imageFileName) {
+        super(id, imageFileName);
+    }
 	public Sprite(String id, String imageFileName, Point p) {
 		super(id, imageFileName);
 		setPosition(p);
