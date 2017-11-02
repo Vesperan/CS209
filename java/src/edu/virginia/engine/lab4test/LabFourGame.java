@@ -15,15 +15,18 @@ import static java.awt.event.KeyEvent.*;
 public class LabFourGame extends Game{
 
     int framevcounter= 0;
+    boolean won = false;
+    int score = 5000;
 	/* Create a sprite object for our game. We'll use mario */
 	Sprite mario = new Sprite("Mario", "Mario.png");
     Sprite goomba = new Sprite("Goomba", "Goomba.png", new Point(200,200));
+    Sprite peach = new Sprite("Peach", "Peach.png", new Point(400,300));
 
 	/**
 	 * Constructor. See constructor in Game.java for details on the parameters given
 	 * */
 	public LabFourGame() {
-		super("Lab One Test Game", 750, 750);
+		super("Lab Four Test Game", 750, 750);
 	}
 	
 	/**
@@ -61,6 +64,7 @@ public class LabFourGame extends Game{
 		{
 		    mario.setVisible(mario.getVisible()^true);
 		    framevcounter = 0;
+		    System.out.println("Peach! " + peach.getPosition());
 		}
 
         if(pressedKeys.contains(VK_Z))
@@ -95,14 +99,15 @@ public class LabFourGame extends Game{
 
 		/* Make sure mario is not null. Sometimes Swing can auto cause an extra frame to go before everything is initialized */
 		if(mario != null) {
-            if(goomba != null)
-                if(mario.collidesWith(goomba)) {
-                System.out.println("aaaah");
-                }
+            if (goomba != null)
+                if (mario.collidesWith(goomba))
+                    score -= 10;
+            if (peach != null)
+                if (mario.collidesWith(peach))
+                    won = true;
             mario.update(pressedKeys);
+		}
         }
-
-	}
 	
 	/**
 	 * Engine automatically invokes draw() every frame as well. If we want to make sure mario gets drawn to
@@ -113,21 +118,34 @@ public class LabFourGame extends Game{
 		super.draw(g);
 		Graphics2D g2d = (Graphics2D) g;
 
+        if(score < 0)
+            g2d.drawString("YOU LOSE!", 330, 330);
+        else if(won)
+            g2d.drawString("YOU WIN!", 330, 330);
+        else {
+            g2d.drawString("Score: " + score, 620, 700);
 		/* Same, just check for null in case a frame gets thrown in before Mario is initialized */
-        if(goomba != null) {
-            goomba.draw(g);
-        }
-		if(mario != null) {
-			mario.draw(g);
+            if (goomba != null) {
+                goomba.draw(g);
+            }
+            if (peach != null) {
+                peach.draw(g);
+            }
+            if (mario != null) {
+                mario.draw(g);
+            }
         }
 	}
 
     public void setup() {
-        mario.setHitbox(mario.getScaledWidth(), mario.getScaledHeight(), "hitboxm.png");
-        mario.addChild(mario.getHitbox());
+        peach.setHitbox(peach.getScaledWidth(), peach.getScaledHeight(), "hitboxp.png");
+        peach.addChild(peach.getHitbox());
 
         goomba.setHitbox(goomba.getScaledWidth(), goomba.getScaledHeight(), "hitboxg.png");
         goomba.addChild(goomba.getHitbox());
+
+        mario.setHitbox(mario.getScaledWidth(), mario.getScaledHeight(), "hitboxm.png");
+        mario.addChild(mario.getHitbox());
     }
 
 	/**

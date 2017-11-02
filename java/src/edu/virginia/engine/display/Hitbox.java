@@ -13,7 +13,7 @@ public class Hitbox extends Sprite {
         setPosition(pos);
         boxWidth = x;
         boxHeight = y;
-
+        setVisible(false);
     }
 
     public double getBoxWidth() {
