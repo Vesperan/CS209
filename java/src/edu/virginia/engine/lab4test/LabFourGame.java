@@ -3,7 +3,9 @@ package edu.virginia.engine.lab4test;
 import edu.virginia.engine.display.Game;
 import edu.virginia.engine.display.Hitbox;
 import edu.virginia.engine.display.Sprite;
+import edu.virginia.engine.display.SoundManager;
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 
 import static java.awt.event.KeyEvent.*;
@@ -21,7 +23,7 @@ public class LabFourGame extends Game{
 	Sprite mario = new Sprite("Mario", "Mario.png");
     Sprite goomba = new Sprite("Goomba", "Goomba.png", new Point(200,200));
     Sprite peach = new Sprite("Peach", "Peach.png", new Point(400,300));
-
+    SoundManager sm = new SoundManager();
 	/**
 	 * Constructor. See constructor in Game.java for details on the parameters given
 	 * */
@@ -100,11 +102,17 @@ public class LabFourGame extends Game{
 		/* Make sure mario is not null. Sometimes Swing can auto cause an extra frame to go before everything is initialized */
 		if(mario != null) {
             if (goomba != null)
-                if (mario.collidesWith(goomba))
+                if (mario.collidesWith(goomba)) {
+                    //sm.PlaySoundEffect("woops");
+                    sm.PlaySoundEffect("mammamia");
                     score -= 10;
+                }
             if (peach != null)
-                if (mario.collidesWith(peach))
+                if (mario.collidesWith(peach)) {
+                    sm.PlaySoundEffect("win");
                     won = true;
+                }
+
             mario.update(pressedKeys);
 		}
         }
@@ -120,8 +128,10 @@ public class LabFourGame extends Game{
 
         if(score < 0)
             g2d.drawString("YOU LOSE!", 330, 330);
-        else if(won)
+        else if(won) {
             g2d.drawString("YOU WIN!", 330, 330);
+            //sm.PlaySoundEffect("win");
+        }
         else {
             g2d.drawString("Score: " + score, 620, 700);
 		/* Same, just check for null in case a frame gets thrown in before Mario is initialized */
@@ -146,6 +156,16 @@ public class LabFourGame extends Game{
 
         mario.setHitbox(mario.getScaledWidth(), mario.getScaledHeight(), "hitboxm.png");
         mario.addChild(mario.getHitbox());
+
+        sm.LoadMusic("theme", "resources/mario_theme.wav");
+        sm.LoadMusic("theme2", "resources/mario_star.wav");
+
+        sm.LoadSoundEffect("win", "resources/mario_congratulations.wav");
+        sm.LoadSoundEffect("mammamia", "resources/mario_mammamia.wav");
+        sm.LoadSoundEffect("woops", "resources/mk64_item_drop.wav");
+
+        sm.PlayMusic("theme2");
+
     }
 
 	/**
@@ -156,5 +176,6 @@ public class LabFourGame extends Game{
 		LabFourGame game = new LabFourGame();
 		game.setup();
 		game.start();
+
 	}
 }

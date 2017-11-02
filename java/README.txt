@@ -1,3 +1,19 @@
+Lab 4
+Andy Ham (aham) and Eri Rogers (emadigan)
+
+When LabFourGame.java is run, mario will appear along with goomba and peach.
+You can move mario using arrow keys and rotate him with 'W' and 'Q'
+'A' and 'S' make mario bigger and smaller, and 'Z' and 'X' makes him more or less transparent.
+'V' toggles visibility of mario.
+'I' 'J' 'K' 'L' moves mario's pivot point around.
+
+The goal is to navigate mario around the goomba and reach peach. If mario's hitbox collides
+with goomba's hitbox, he will lose points indicated in the "Score" section on the bottom corner.
+If Score reaches 0, you lose the game. If mario reaches peach before score hits 0, you win!
+
+
+
+
 Lab 2
 Andy Ham(aham) and Eri Rogers(emadigan)
 
