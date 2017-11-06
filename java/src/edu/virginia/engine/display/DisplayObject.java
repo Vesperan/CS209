@@ -50,6 +50,9 @@ public class DisplayObject {
 	//Hitbox instance variable
 	private Hitbox hitbox;
 
+	//checks if physics applies to display object
+	private boolean hasPhysics = false;
+
 	/**
 	 * Constructors: can pass in the id OR the id and image's file path and
 	 * position OR the id and a buffered image and position
@@ -126,6 +129,10 @@ public class DisplayObject {
     {
         hitbox = new Hitbox(this, new Point(0,0), x, y, filename);
     }
+
+    public void setHasPhysics(boolean bool) { this.hasPhysics = bool; }
+    public boolean getHasPhysics() { return hasPhysics; }
+
 
     public Point toGlobal(Point p, DisplayObject parent){
 	    return  new Point(p.x + parent.getPosition().x, p.y + parent.getPosition().y);
