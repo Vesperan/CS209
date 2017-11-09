@@ -17,6 +17,7 @@ import static java.awt.event.KeyEvent.*;
 public class LabFiveGame extends Game{
 
     int framevcounter= 0;
+    int framescounter = 0;
     boolean won = false;
     int score = 5000;
 
@@ -24,10 +25,11 @@ public class LabFiveGame extends Game{
     double airtime = 0.0;
     double velocity = 0.0;
     double acceleration = 9.8;
+
 	/* Create a sprite object for our game. We'll use mario */
 	Sprite mario = new Sprite("Mario", "Mario.png");
-    Sprite goomba = new Sprite("Goomba", "Goomba.png", new Point(200,200));
-    Sprite peach = new Sprite("Peach", "Peach.png", new Point(400,300));
+    Sprite goomba = new Sprite("Goomba", "Goomba.png", new Point(200,450));
+    Sprite peach = new Sprite("Peach", "Peach.png", new Point(400,400));
     SoundManager sm = new SoundManager();
 	/**
 	 * Constructor. See constructor in Game.java for details on the parameters given
@@ -45,6 +47,7 @@ public class LabFiveGame extends Game{
 		super.update(pressedKeys);
 
 		framevcounter++;
+		framescounter++;
 
         if(pressedKeys.contains(VK_L)){ mario.setPivotPoint(new Point((int) mario.getPivotPoint().x+5,
                 (int) mario.getPivotPoint().y)); }
@@ -59,7 +62,8 @@ public class LabFiveGame extends Game{
                 (int) mario.getPosition().y)); }
         if(pressedKeys.contains(VK_LEFT)){ mario.setPosition(new Point((int) mario.getPosition().x-5,
                 (int) mario.getPosition().y)); }
-        if(pressedKeys.contains(VK_UP)){ mario.setPosition(new Point((int) mario.getPosition().x,
+        if(pressedKeys.contains(VK_UP)){
+            mario.setPosition(new Point((int) mario.getPosition().x,
                 (int) mario.getPosition().y-5)); }
 
         if(pressedKeys.contains(VK_P)){
@@ -69,8 +73,10 @@ public class LabFiveGame extends Game{
                     (int) mario.getPosition().y-1));
         }
 
-        if(pressedKeys.contains(VK_DOWN)){ mario.setPosition(new Point((int) mario.getPosition().x,
-                (int) mario.getPosition().y+5)); }
+        if(pressedKeys.contains(VK_DOWN)){
+            if(mario_in_air)
+            mario.setPosition(new Point((int) mario.getPosition().x, (int) mario.getPosition().y+5));
+        }
 
         if(pressedKeys.contains(VK_W)){ mario.setRotation(mario.getRotation()+(Math.PI/50)); }
         if(pressedKeys.contains(VK_Q)){ mario.setRotation(mario.getRotation()-(Math.PI/50)); }
@@ -79,7 +85,7 @@ public class LabFiveGame extends Game{
 		{
 		    mario.setVisible(mario.getVisible()^true);
 		    framevcounter = 0;
-		    System.out.println("Peach! " + peach.getPosition());
+		    //System.out.println("Peach! " + peach.getPosition());
 		}
 
         if(pressedKeys.contains(VK_Z))
@@ -118,8 +124,8 @@ public class LabFiveGame extends Game{
 		    if (mario_in_air) {
 		        airtime = airtime + 0.01;
 		        velocity = velocity +  (acceleration * airtime);
-		        System.out.println(airtime);
-		        Gravity(mario, airtime, velocity, acceleration);
+		        //System.out.println(airtime);
+		        gravity(mario, airtime, velocity, acceleration);
             } else {
 		        if (mario.getPosition().y < 500) {
 		            mario_in_air = true;
@@ -130,24 +136,33 @@ public class LabFiveGame extends Game{
             if (goomba != null)
                 if (mario.collidesWith(goomba)) {
                     //sm.PlaySoundEffect("woops");
-                    sm.PlaySoundEffect("mammamia");
+                    if(framescounter>60 && !won) {
+                        sm.PlaySoundEffect("mammamia");
+                        framescounter=0;
+                    }
                     score -= 10;
+                    bounce(mario, goomba);
                 }
             if (peach != null)
                 if (mario.collidesWith(peach)) {
-                    sm.PlaySoundEffect("win");
-                    won = true;
+                    if(!won) {
+                        sm.PlaySoundEffect("win");
+                        won = true;
+                    }
+                    bounce(mario, goomba);
                 }
 
             mario.update(pressedKeys);
 		}
     }
-	public void Gravity(Sprite m, double t, double v, double a) {
-	    if (m.getPosition().y < 500) {
+	public void gravity(Sprite m, double t, double v, double a) {
 	        int offset = (int) ((v * t)+ (0.5 * a * t * t));
+        if (m.getPosition().y+offset < 500) {
             m.setPosition(new Point((int) m.getPosition().x,
                     (int) m.getPosition().y  + offset));
         } else {
+            m.setPosition(new Point((int) m.getPosition().x,
+                    (int) 500));
 	        mario_in_air = false;
 	        airtime = 0;
 	        velocity = 0;
@@ -155,6 +170,20 @@ public class LabFiveGame extends Game{
     }
     //9.807 m/s^2 is earth's gravity acceleration constant
     // d = vt + 1/2 at^2
+    public void bounce(Sprite m, Sprite c) {
+	    double mm = m.getMass();
+	    double cm = c.getMass();
+        if (m.getPosition().x < c.getPosition().x) {
+            m.setPosition(new Point((int) m.getPosition().x - (int)(10*mm), (int) m.getPosition().y));
+            c.setPosition(new Point((int) c.getPosition().x + (int)(10*cm),
+                    (int) c.getPosition().y));
+        }
+        else if (m.getPosition().x > c.getPosition().x) {
+            m.setPosition(new Point((int) m.getPosition().x + (int)(10*mm), (int) m.getPosition().y));
+            c.setPosition(new Point((int) c.getPosition().x - (int)(10*cm),
+                    (int) c.getPosition().y));
+        }
+    }
 	/**
 	 * Engine automatically invokes draw() every frame as well. If we want to make sure mario gets drawn to
 	 * the screen, we need to make sure to override this method and call mario's draw method.
@@ -208,6 +237,9 @@ public class LabFiveGame extends Game{
         mario.setHasPhysics(true);
         System.out.println("does mario have physics?" + mario.getHasPhysics());
 
+        goomba.setMass(10);
+        mario.setMass(5);
+        peach.setMass(3);
     }
 
 	/**

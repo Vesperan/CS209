@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 
 public class DisplayObjectContainer extends DisplayObject {
 
+
     //ArrayList of DisplayObjects connected to the coordinate system of this object
     private ArrayList<DisplayObject> children = new ArrayList<DisplayObject>();
 

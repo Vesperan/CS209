@@ -17,6 +17,7 @@ import static java.awt.event.KeyEvent.*;
 public class LabFourGame extends Game{
 
     int framevcounter= 0;
+    int framescounter = 0;
     boolean won = false;
     int score = 5000;
 	/* Create a sprite object for our game. We'll use mario */
@@ -40,6 +41,7 @@ public class LabFourGame extends Game{
 		super.update(pressedKeys);
 
 		framevcounter++;
+		framescounter++;
 
         if(pressedKeys.contains(VK_L)){ mario.setPivotPoint(new Point((int) mario.getPivotPoint().x+5,
                 (int) mario.getPivotPoint().y)); }
@@ -100,21 +102,27 @@ public class LabFourGame extends Game{
         }
 
 		/* Make sure mario is not null. Sometimes Swing can auto cause an extra frame to go before everything is initialized */
-		if(mario != null) {
+        if(mario != null) {
             if (goomba != null)
                 if (mario.collidesWith(goomba)) {
                     //sm.PlaySoundEffect("woops");
-                    sm.PlaySoundEffect("mammamia");
+                    if(framescounter>60 && !won) {
+                        sm.PlaySoundEffect("mammamia");
+                        framescounter = 0;
+                    }
                     score -= 10;
                 }
             if (peach != null)
                 if (mario.collidesWith(peach)) {
-                    sm.PlaySoundEffect("win");
+                    if(!won) {
+                        sm.PlaySoundEffect("win");
+                        framescounter = 0;
+                    }
                     won = true;
                 }
 
             mario.update(pressedKeys);
-		}
+        }
         }
 	
 	/**

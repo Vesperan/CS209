@@ -14,6 +14,8 @@ import javax.imageio.ImageIO;
  * */
 public class DisplayObject {
 
+	private  double mass = 1;
+
 	//Private reference to parent display object
 	private DisplayObject parent;
 
@@ -124,7 +126,10 @@ public class DisplayObject {
     public void setScaleY(double sy) { scaleY = sy; }
  	public double getScaleY() { return scaleY; }
 
-    public Hitbox getHitbox() { return hitbox; }
+ 	public void setMass(double n){ mass = n; }
+	public double getMass() { return mass; }
+
+	public Hitbox getHitbox() { return hitbox; }
     public void setHitbox(double x, double y, String filename)
     {
         hitbox = new Hitbox(this, new Point(0,0), x, y, filename);
