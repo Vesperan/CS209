@@ -29,6 +29,8 @@ function Level(plan) {
         fieldType = "lava";
       else if (ch == "p")
         fieldType = "paint";
+      else if (ch == "d")
+        fieldType = "door";
       gridLine.push(fieldType);
     }
     this.grid.push(gridLine);
@@ -41,7 +43,9 @@ function Level(plan) {
 }
 
 Level.prototype.isFinished = function() {
-  return this.status != null && this.finishDelay < 0;
+  if ((this.status == "lost" || this.status == "won") && this.finishDelay <0)
+    return true;
+  // return this.status != null && this.finishDelay < 0;
 };
 
 function Vector(x, y) {
@@ -58,7 +62,8 @@ var actorChars = {
   "@": Player,
   "o": Coin,
   "=": Lava, "|": Lava, "v": Lava,
-  "p": Paint
+  "p": Paint,
+  "d": Door
 };
 
 function Player(pos) {
@@ -84,10 +89,15 @@ Lava.prototype.type = "lava";
 
 function Paint(pos) {
   this.pos = pos;
-  this.size = new Vector(1.5, 1);
+  this.size = new Vector(1, 1);
 }
 Paint.prototype.type = "paint";
 
+function Door(pos) {
+  this.pos = pos;
+  this.size = new Vector(1,1);
+}
+Door.prototype.type = "door";
 function Coin(pos) {
   this.basePos = this.pos = pos.plus(new Vector(0.2, 0.1));
   this.size = new Vector(0.6, 0.6);
@@ -232,6 +242,14 @@ Lava.prototype.act = function(step, level) {
 
 var wobbleSpeed = 8, wobbleDist = 0.07;
 
+Paint.prototype.act = function(step) {
+  this.pos = this.pos
+}
+
+Door.prototype.act = function(step) {
+  this.pos = this.pos
+}
+
 Coin.prototype.act = function(step) {
   this.wobble += step * wobbleSpeed;
   var wobblePos = Math.sin(this.wobble) * wobbleDist;
@@ -283,19 +301,21 @@ Player.prototype.act = function(step, level, keys) {
 
   // Losing animation
   if (level.status == "lost") {
-    // this.pos.y += step;
-    // this.size.y -= step;
+     this.pos.y += step;
+     this.size.y -= step;
   }
 };
 
 Level.prototype.playerTouched = function(type, actor) {
-  if (type == "lava" && this.status == null) {
+  if (type == "lava") {
     this.status = "lost";
     this.finishDelay = 1;
   } else if (type == "paint") {
 
     console.log("tihs is paint");
     this.status = "colored";
+  } else if (type == "door") {
+    console.log("this is door")
   } else if (type == "coin") {
     console.log(this.player.status);
     console.log(type);
