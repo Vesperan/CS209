@@ -65,7 +65,6 @@ var actorChars = {
   "o": Coin,
   "=": Lava, "|": Lava, "v": Lava,
   "p": Paint,
-  "d": Door,
   "1": Paint_white
 };
 
@@ -73,6 +72,7 @@ function Player(pos) {
   this.pos = pos.plus(new Vector(0, -0.5));
   this.size = new Vector(0.8, 1.5);
   this.speed = new Vector(0, 0);
+  this.background = "red";
 }
 Player.prototype.type = "player";
 
@@ -102,11 +102,6 @@ function Paint_white(pos) {
 }
 Paint_white.prototype.type = "paint_white";
 
-function Door(pos) {
-  this.pos = pos;
-  this.size = new Vector(1,1);
-}
-Door.prototype.type = "door";
 function Coin(pos) {
   this.basePos = this.pos = pos.plus(new Vector(0.2, 0.1));
   this.size = new Vector(0.6, 0.6);
@@ -204,7 +199,7 @@ Level.prototype.obstacleAt = function(pos, size) {
     return "wall";
   if (yEnd > this.height)
     return "lava";
-  for (var y = yStart; y < yEnd; y++) {
+  for (var y = yEnd-1; y >= yStart; y--) {
     for (var x = xStart; x < xEnd; x++) {
       var fieldType = this.grid[y][x];
       if (fieldType) return fieldType;
@@ -259,10 +254,6 @@ Paint_white.prototype.act = function(step) {
   this.pos = this.pos
 }
 
-Door.prototype.act = function(step) {
-  this.pos = this.pos
-}
-
 Coin.prototype.act = function(step) {
   this.wobble += step * wobbleSpeed;
   var wobblePos = Math.sin(this.wobble) * wobbleDist;
@@ -279,7 +270,11 @@ Player.prototype.moveX = function(step, level, keys) {
   var motion = new Vector(this.speed.x * step, 0);
   var newPos = this.pos.plus(motion);
   var obstacle = level.obstacleAt(newPos, this.size);
-  if (obstacle)
+  if (obstacle == "door") {
+  if(compareHexColor(globalColorR, "0b") == 0 && compareHexColor(globalColorG, "24") == 0
+        && compareHexColor(globalColorB, "fb") == 0)
+  this.pos = newPos;
+  } else if (obstacle)
     level.playerTouched(obstacle);
   else
     this.pos = newPos;
@@ -293,7 +288,12 @@ Player.prototype.moveY = function(step, level, keys) {
   var motion = new Vector(0, this.speed.y * step);
   var newPos = this.pos.plus(motion);
   var obstacle = level.obstacleAt(newPos, this.size);
-  if (obstacle) {
+  if (obstacle == "door" && obstacle != "wall") {
+  var myColor = globalColorR + globalColorG + globalColorB;
+  var doorColor = "0b24fb";
+    if(compareHexColor(myColor, doorColor) == 0)
+    this.pos = newPos;
+    } else if (obstacle){
     level.playerTouched(obstacle);
     if (keys.up && this.speed.y > 0)
       this.speed.y = -jumpSpeed;
@@ -304,7 +304,17 @@ Player.prototype.moveY = function(step, level, keys) {
   }
 };
 
+function handleUpdate(e) {
+        document.documentElement.style.setProperty(`--${this.id}`, this.value);
+        console.log(`--${this.id}` + this.value)
+        globalColorR = this.value.substr(1,2);
+        globalColorG = this.value.substr(3,2);
+        globalColorB = this.value.substr(5,2);
+        console.log(`--${this.id}` + globalColorR + globalColorG + globalColorB);
+      }
+
 Player.prototype.act = function(step, level, keys) {
+
   this.moveX(step, level, keys);
   this.moveY(step, level, keys);
 
@@ -317,22 +327,31 @@ Player.prototype.act = function(step, level, keys) {
      this.pos.y += step;
      this.size.y -= step;
   }
+
+  const inputs = [].slice.call(document.querySelectorAll('input'));
+  var players = document.querySelectorAll(".player");
+
+  inputs.forEach(input => input.addEventListener('change', handleUpdate));
 };
 
 Level.prototype.playerTouched = function(type, actor) {
   if (type == "lava") {
     this.status = "lost";
-    this.finishDelay = 1;
+    this.finishDelay = .2;
   } else if (type == "paint") {
-
-    console.log("tihs is paint");
-    this.status = "colored";
+    globalColorR = "0b";
+    globalColorG = "24";
+    globalColorB = "fb";
+    var input = "#" + globalColorR + globalColorG + globalColorB;
+    document.documentElement.style.setProperty(`--base`, input);
+    console.log(`--base` + globalColorR + globalColorG + globalColorB);
   } else if (type == "paint_white") {
-
-    console.log("this is white");
-    this.status = "colored_white";
-  } else if (type == "door") {
-    console.log("this is door")
+    globalColorR = "ff";
+    globalColorG = "ff";
+    globalColorB = "ff";
+    var input = "#" + globalColorR + globalColorG + globalColorB;
+    document.documentElement.style.setProperty(`--base`, input);
+    console.log(`--base` + globalColorR + globalColorG + globalColorB);
   } else if (type == "coin") {
     console.log(this.player.status);
     console.log(type);
@@ -351,6 +370,17 @@ Level.prototype.playerTouched = function(type, actor) {
 };
 
 var arrowCodes = {37: "left", 38: "up", 39: "right"};
+
+function compareHexColor(c1, c2) {
+  var temp1 = parseInt(c1, 16);
+  var temp2 = parseInt(c2, 16);
+  if(temp1>temp2)
+  var hexStr = (temp1 - temp2).toString(16);
+  else
+  var hexStr = (temp2 - temp1).toString(16);
+  while (hexStr.length < 2) { hexStr = '0' + hexStr; }
+  return hexStr;
+}
 
 function trackKeys(codes) {
   var pressed = Object.create(null);

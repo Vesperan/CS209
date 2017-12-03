@@ -1,10 +1,16 @@
 <!doctype html>
-<script src="code/chapter/15_game.js"></script>
-<script src="code/game_levels.js"></script>
+<script src="15_game.js"></script>
+<script src="game_levels.js"></script>
 
-<link rel="stylesheet" href="css/game.css">
+<link rel="stylesheet" href="game.css">
 
-<body>
+<body style= "padding: 20px">
+
+   <label>Color Picker</label>
+  <input type="color" id="base" value="#ffc600">
+
+  <!--<script src="jscolor.js"></script>-->
+    <!--Color: <input class="jscolor" value="646464">-->
   <script>
     runGame(GAME_LEVELS, DOMDisplay);
   </script>
