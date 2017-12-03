@@ -10,6 +10,9 @@
 
 .paint        { background: blue;
                 /*border: 0.25px solid gray;*/}
+
+.paint_white { background: white; }
+
 .door {background: blue;}
 
 .actor  { position: absolute;  }
@@ -33,6 +36,10 @@
 
 .colored .player {
   background: blue ;
+}
+
+.colored_white .player {
+  background: white;
 }
 
 .won .player {

@@ -31,6 +31,8 @@ function Level(plan) {
         fieldType = "paint";
       else if (ch == "d")
         fieldType = "door";
+      else if (ch == "1")
+        fieldType = "paint_white"
       gridLine.push(fieldType);
     }
     this.grid.push(gridLine);
@@ -63,7 +65,8 @@ var actorChars = {
   "o": Coin,
   "=": Lava, "|": Lava, "v": Lava,
   "p": Paint,
-  "d": Door
+  "d": Door,
+  "1": Paint_white
 };
 
 function Player(pos) {
@@ -92,6 +95,12 @@ function Paint(pos) {
   this.size = new Vector(1, 1);
 }
 Paint.prototype.type = "paint";
+
+function Paint_white(pos) {
+  this.pos = pos;
+  this.size = new Vector(1, 1);
+}
+Paint_white.prototype.type = "paint_white";
 
 function Door(pos) {
   this.pos = pos;
@@ -246,6 +255,10 @@ Paint.prototype.act = function(step) {
   this.pos = this.pos
 }
 
+Paint_white.prototype.act = function(step) {
+  this.pos = this.pos
+}
+
 Door.prototype.act = function(step) {
   this.pos = this.pos
 }
@@ -314,6 +327,10 @@ Level.prototype.playerTouched = function(type, actor) {
 
     console.log("tihs is paint");
     this.status = "colored";
+  } else if (type == "paint_white") {
+
+    console.log("this is white");
+    this.status = "colored_white";
   } else if (type == "door") {
     console.log("this is door")
   } else if (type == "coin") {

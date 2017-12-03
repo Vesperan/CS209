@@ -37,7 +37,7 @@ var GAME_LEVELS = [
    "  x                     o                                                    x  ",
    "  x                 d                    xxxxx                             o x  ",
    "  x          xxxx   d   o                                                    x  ",
-   "  x  @    p  x  x   d                                            xxxxx       x  ",
+   "  x  @ 1  p  x  x   d                                            xxxxx       x  ",
    "  xxxxxxxxxxxx  xxxxxxxxxxxxxxx   xxxxxxxxxxxxxxxxxxxx     xxxxxxx   xxxxxxxxx  ",
    "                              x   x                  x     x                    ",
    "                              x!!!x                  x!!!!!x                    ",
