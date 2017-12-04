@@ -6,7 +6,7 @@
 :root {
   /* :root is a clever way of saying "the outer-most element" */
 
-  --base: #ff4545; /* the default */
+  --base: #A0A0A0; /* the default */
   --vis: hidden;
 }
 
@@ -16,7 +16,7 @@
                 border-spacing: 0;   }
 .background td { padding: 0;          }
 .lava          { background: rgb(255, 100, 100); }
-.wall          { background: rgb(64, 64, 64);   }
+.wall          { background: #646464;   }
 
 .paint  {background: #000000; border-radius: 50%;} /* Black */
 .paint2 {background: #FFFFFF;} /* White */
@@ -102,9 +102,30 @@ margin-bottom: 20px;
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.textstuff {
+position: fixed;
+top: 540px;
+left: 31px;
+color: #000000;
+font: Garamond;
+font-size: 15px;
+font-weight: 400;
+width: 600px;
+}
+
+.scorestuff {
+position: fixed;
+top: 45px;
+left: 530px;
+color: #000000;
+font: Garamond;
+font-size: 25px;
+font-weight: 400;
+width: 600px;
+}
+
 .lost .player {
   background: rgb(160, 64, 64);
-  /*background: rgb(241,229,89);*/
 }
 
 .won .player {
