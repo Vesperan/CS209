@@ -447,7 +447,7 @@ Player.prototype.moveX = function(step, level, keys) {
   var platformColor = obstacle.color.substr(1);
   platformColor = complement(platformColor);
 
-  if(distance(myColor, platformColor) < 20)
+  if(distance(myColor, platformColor) > 20)
   this.pos = newPos;
   } else if (obstacle)
     level.playerTouched(obstacle);
@@ -482,10 +482,10 @@ Player.prototype.moveY = function(step, level, keys) {
   var platformColor = obstacle.color.substr(1);
   platformColor = complement(platformColor);
 
-  console.log("pc"+platformColor);
-  console.log("myc"+myColor);
-    console.log("subtract"+compareHexColor(myColor, platformColor))
-    if(distance(myColor, doorColor) < 20)
+  console.log("pc "+platformColor);
+  console.log("myc "+myColor);
+    console.log("subtract "+distance(myColor, platformColor))
+    if(distance(myColor, platformColor) > 20)
       this.pos = newPos;
     else{
       document.getElementById("textPlace").innerHTML = "";
@@ -620,7 +620,6 @@ function distance(c1, c2) {
   var temp1 = hexToRgb(c1);
   var temp2 = hexToRgb(c2);
   var toReturn = Math.sqrt(Math.pow((temp1.r-temp2.r),2)+Math.pow((temp1.g-temp2.g),2)+Math.pow((temp1.b-temp2.b),2));
-  console.log(timegap + " " + toReturn);
   if(toReturn<20 && timegap>300){
        score += 20-toReturn;
        timegap = 0;
