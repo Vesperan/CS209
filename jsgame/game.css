@@ -124,6 +124,27 @@ font-weight: 400;
 width: 600px;
 }
 
+.container {
+    position: absolute;
+    left: 30px;
+    top: 8px;
+}
+
+.input {
+    position: absolute;
+    left: 29px;
+    top: 29px;
+    width: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+img { 
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
 .lost .player {
   background: rgb(160, 64, 64);
 }
