@@ -16,10 +16,6 @@ var mess2 = 1;
 var score = 0;
 var timegap = 0;
 
-var globalColorR = "64";
-var globalColorG = "64";
-var globalColorB = "64";
-
 var bla = 0;
 var whi = 0;
 var cya = 0;
@@ -35,7 +31,8 @@ function Level(plan, num) {
   this.height = plan.length;
   this.grid = [];
   this.actors = [];
-
+  document.documentElement.style.setProperty(`--base`, "#A0A0A0");
+  
   for (var y = 0; y < this.height; y++) {
     var line = plan[y], gridLine = [];
     for (var x = 0; x < this.width; x++) {
@@ -297,9 +294,10 @@ Level.prototype.obstacleAt = function(pos, size) {
   if (yEnd > this.height)
     return "lava";
   for (var y = yEnd-1; y >= yStart; y--) {
-    for (var x = xStart; x < xEnd; x++) {
+    for (var x = xEnd-1; x >= xStart; x--) {
       var fieldType = this.grid[y][x];
-      if (fieldType == "door" ) return this.actorAtSpot(pos, size);
+      if (fieldType == "door" && y)
+      return this.actorAtSpot(pos, size);
       else if(fieldType == "platform" ) return this.actorAtSpot(pos, size);
       else if (fieldType) return fieldType;
     }
@@ -336,7 +334,7 @@ Level.prototype.animate = function(step, level, keys) {
   if(level.number == 0 && mess1 == 1)
     document.getElementById("textPlace").innerHTML = "Collect all the coins to move to the next level! Try touching the blob of black paint on the hill.";
   if(level.number == 2 && mess2 == 1)
-    document.getElementById("textPlace").innerHTML = "You collected all the primary and secondary colors! Your palette has been upgraded.";
+    document.getElementById("textPlace").innerHTML = "You collected all the primary and secondary colors! Your palette has been upgraded. When you pass through a door or stand on a platform, you'll get points based on how close you are to the correct color.";
 
   if(level.number<2)
   document.getElementById("base").style.display = "none";
@@ -436,13 +434,13 @@ Player.prototype.moveX = function(step, level, keys) {
   var obstacle = level.obstacleAt(newPos, this.size);
   
   if (obstacle != null && obstacle != "wall" && obstacle != "lava" && obstacle.type.substr(0,4) == "door") {
-  var myColor = globalColorR + globalColorG + globalColorB;
+  var myColor = document.documentElement.style.getPropertyValue(`--base`).substr(1,6);
   var doorColor = obstacle.color.substr(1,6);
     if(distance(myColor, doorColor) < 20)
   this.pos = newPos;
   
   } else if (obstacle != null && obstacle != "wall" && obstacle != "lava" && obstacle.type.substr(0,8) == "platform") {
-  var myColor = globalColorR + globalColorG + globalColorB;
+  var myColor = document.documentElement.style.getPropertyValue(`--base`).substr(1,6);
   
   var platformColor = obstacle.color.substr(1);
   platformColor = complement(platformColor);
@@ -465,7 +463,7 @@ Player.prototype.moveY = function(step, level, keys) {
   var obstacle = level.obstacleAt(newPos, this.size);
   
   if (obstacle != null && obstacle != "wall" && obstacle != "lava" && obstacle.type.substr(0,4) == "door") {
-  var myColor = globalColorR + globalColorG + globalColorB;
+  var myColor = document.documentElement.style.getPropertyValue(`--base`).substr(1,6);
   var doorColor = obstacle.color.substr(1,6);
     if(distance(myColor, doorColor) < 20)
     this.pos = newPos;
@@ -477,14 +475,11 @@ Player.prototype.moveY = function(step, level, keys) {
         this.speed.y = 0;
     }
   } else if (obstacle != null && obstacle != "wall" && obstacle != "lava" && obstacle.type.substr(0,8) == "platform") {
-  var myColor = globalColorR + globalColorG + globalColorB;
+  var myColor = document.documentElement.style.getPropertyValue(`--base`).substr(1,6);
   
   var platformColor = obstacle.color.substr(1);
   platformColor = complement(platformColor);
 
-  console.log("pc "+platformColor);
-  console.log("myc "+myColor);
-    console.log("subtract "+distance(myColor, platformColor))
     if(distance(myColor, platformColor) > 20)
       this.pos = newPos;
     else{
@@ -508,11 +503,7 @@ Player.prototype.moveY = function(step, level, keys) {
 function handleUpdate(e) {
   //if(actorAt(this) != null && actorAt(this).type.substr(0,4)!="door"){
         document.documentElement.style.setProperty(`--base`, this.value);
-        console.log(`--$base` + this.value)
-        globalColorR = this.value.substr(1,2);
-        globalColorG = this.value.substr(3,2);
-        globalColorB = this.value.substr(5,2);
-        console.log(`--$base` + globalColorR + globalColorG + globalColorB);
+        console.log(`--$base` +": "+ this.value)
       }
 
 Player.prototype.act = function(step, level, keys) {
@@ -540,14 +531,14 @@ Player.prototype.act = function(step, level, keys) {
 Level.prototype.playerTouched = function(type, actor) {
   if (type == "lava") {
     this.status = "lost";
-    this.finishDelay = .2;
+    this.finishDelay = .5;
   } else if (type == "coin") {
+    if(this.number >1){
     score += 20;
+    mess2=0;
+  }
     document.getElementById("textPlace").innerHTML = "";
-    console.log(this.player.status);
-    console.log(type);
-    console.log(actor);
-    console.log("this is coin");
+    //console.log("this is coin");
     this.actors = this.actors.filter(function(other) {
       return other != actor;
     });
@@ -558,12 +549,7 @@ Level.prototype.playerTouched = function(type, actor) {
       this.finishDelay = 1;
     }
   } else if (type.length>4 && type.substr(0,5) == "paint") {
-    globalColorR = actor.color.substr(1,2);
-    globalColorG = actor.color.substr(3,2);
-    globalColorB = actor.color.substr(5,2);
-    var input = "#" + globalColorR + globalColorG + globalColorB;
-    document.documentElement.style.setProperty(`--base`, input);
-    console.log(`--base` + globalColorR + globalColorG + globalColorB);
+    document.documentElement.style.setProperty(`--base`, actor.color);
 
     if(actor.color == "#000000"){
       bla = 1;
@@ -580,18 +566,22 @@ Level.prototype.playerTouched = function(type, actor) {
     }
     else if(actor.color == "#0000FF"){
       blu = 1;
-      document.getElementById("textPlace").innerHTML = "A secondary color! Hidden behind barriers of cyan and magenta, which can be mixed to produce blue.";
+      document.getElementById("textPlace").innerHTML = "A secondary color! Hidden behind barriers of cyan and magenta, which can be mixed to produce blue. Blue's comple color is YELLOW.";
     }
     else if(actor.color == "#FF00FF")
       mag = 1;
-    else if(actor.color == "#FF0000")
+    else if(actor.color == "#FF0000"){
       re = 1;
+       document.getElementById("textPlace").innerHTML = "Red is made by mixing magenta and yellow. Its complement is CYAN.";
+    }
     else if(actor.color == "#FFFF00"){
       yel = 1;
       document.getElementById("textPlace").innerHTML = "That's all the primary colors. Now, where could those secondaries be hiding...";
     }
-    else if(actor.color == "#00FF00")
+    else if(actor.color == "#00FF00"){
       gre = 1;
+       document.getElementById("textPlace").innerHTML = "Yellow and cyan can be mixed to make green. The complementary color of green is MAGENTA.";
+    }
 
     this.actors = this.actors.filter(function(other) {
       return other != actor;
@@ -621,6 +611,7 @@ function distance(c1, c2) {
   var temp2 = hexToRgb(c2);
   var toReturn = Math.sqrt(Math.pow((temp1.r-temp2.r),2)+Math.pow((temp1.g-temp2.g),2)+Math.pow((temp1.b-temp2.b),2));
   if(toReturn<20 && timegap>300){
+      if(this.number >1)
        score += 20-toReturn;
        timegap = 0;
      }
@@ -702,7 +693,7 @@ function rgbToHex(rgb) {
     if(hexb.length<2)
       hexb = hexb + "0";
     var toReturn = hexr + hexg + hexb;
-    console.log(toReturn);
+    //console.log(toReturn);
     return toReturn;
 }
 
@@ -782,5 +773,5 @@ function runGame(plans, Display) {
         console.log("You win!");
     });
   }
-  startLevel(0);
+  startLevel(2);
 }
