@@ -336,9 +336,11 @@ Level.prototype.animate = function(step, level, keys) {
   if(level.number == 2 && mess2 == 1)
     document.getElementById("textPlace").innerHTML = "You collected all the primary and secondary colors! Your palette has been upgraded. When you pass through a door or stand on a platform, you'll get points based on how close you are to the correct color.";
 
-  if(level.number<2)
-  document.getElementById("base").style.display = "none";
-  else {
+  if(level.number<2){
+    document.getElementById("base").style.display = "none";
+    document.getElementById("wheelimg").style.opacity = "0";
+    document.getElementById("wheelimg").style.filter  = 'alpha(opacity=0)';
+  } else {
     document.getElementById("scoreboard").innerHTML = "Score: " + Math.trunc(score);
     document.getElementById("base").style.display = "inline";
     document.getElementById("base").style.visibility = "visible";
@@ -754,11 +756,13 @@ function runLevel(level, Display, andThen) {
 function runGame(plans, Display) {
   function startLevel(n) {
     runLevel(new Level(plans[n], n), Display, function(status) {
-      if(n<2)
+      if(n<2){
         document.getElementById("base").style.display = "none";
+        document.getElementById("wheelimg").style.opacity = "0.5";
+        document.getElementById("wheelimg").style.filter  = 'alpha(opacity=50)';
+      }
       else
         document.getElementById("base").style.display = "inline";
-        document.getElementById("base").innerHTML = " Palette";
       if (status == "lost"){
         document.documentElement.style.setProperty(`--base`, "#A0A0A0");
         if(n==0)
