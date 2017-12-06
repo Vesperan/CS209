@@ -343,7 +343,7 @@ Level.prototype.animate = function(step, level, keys) {
   } else {
     document.getElementById("scoreboard").innerHTML = "Score: " + Math.trunc(score);
     document.getElementById("base").style.display = "inline";
-    document.getElementById("base").style.visibility = "visible";
+    document.getElementById("wheelimg").style.display = "inline";
     bla = whi = cya = blu = mag = re = yel = gre = 0;
 }
   if(level.number==1)
@@ -761,11 +761,10 @@ function runGame(plans, Display) {
     runLevel(new Level(plans[n], n), Display, function(status) {
       if(n<2){
         document.getElementById("base").style.display = "none";
-        document.getElementById("wheelimg").style.opacity = "0.5";
-        document.getElementById("wheelimg").style.filter  = 'alpha(opacity=50)';
       }
-      else
+      else{
         document.getElementById("base").style.display = "inline";
+            }
       if (status == "lost"){
         document.documentElement.style.setProperty(`--base`, "#A0A0A0");
         if(n==0)
@@ -780,5 +779,5 @@ function runGame(plans, Display) {
         console.log("You win!");
     });
   }
-  startLevel(2);
+  startLevel(0);
 }
