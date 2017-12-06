@@ -338,8 +338,8 @@ Level.prototype.animate = function(step, level, keys) {
 
   if(level.number<2){
     document.getElementById("base").style.display = "none";
-    document.getElementById("wheelimg").style.opacity = "0";
-    document.getElementById("wheelimg").style.filter  = 'alpha(opacity=0)';
+    document.getElementById("wheelimg").style.display = "none";
+//    document.getElementById("wheelimg").style.filter  = 'alpha(opacity=0)';
   } else {
     document.getElementById("scoreboard").innerHTML = "Score: " + Math.trunc(score);
     document.getElementById("base").style.display = "inline";
@@ -438,7 +438,7 @@ Player.prototype.moveX = function(step, level, keys) {
   if (obstacle != null && obstacle != "wall" && obstacle != "lava" && obstacle.type.substr(0,4) == "door") {
   var myColor = document.documentElement.style.getPropertyValue(`--base`).substr(1,6);
   var doorColor = obstacle.color.substr(1,6);
-    if(distance(myColor, doorColor) < 20)
+    if(distance(myColor, doorColor,level.number) < 20)
   this.pos = newPos;
   
   } else if (obstacle != null && obstacle != "wall" && obstacle != "lava" && obstacle.type.substr(0,8) == "platform") {
@@ -447,7 +447,7 @@ Player.prototype.moveX = function(step, level, keys) {
   var platformColor = obstacle.color.substr(1);
   platformColor = complement(platformColor);
 
-  if(distance(myColor, platformColor) > 20)
+  if(distance(myColor, platformColor,level.number) > 20)
   this.pos = newPos;
   } else if (obstacle)
     level.playerTouched(obstacle);
@@ -467,7 +467,7 @@ Player.prototype.moveY = function(step, level, keys) {
   if (obstacle != null && obstacle != "wall" && obstacle != "lava" && obstacle.type.substr(0,4) == "door") {
   var myColor = document.documentElement.style.getPropertyValue(`--base`).substr(1,6);
   var doorColor = obstacle.color.substr(1,6);
-    if(distance(myColor, doorColor) < 20)
+    if(distance(myColor, doorColor,level.number) < 20)
     this.pos = newPos;
     else{
       document.getElementById("textPlace").innerHTML = "";
@@ -482,7 +482,7 @@ Player.prototype.moveY = function(step, level, keys) {
   var platformColor = obstacle.color.substr(1);
   platformColor = complement(platformColor);
 
-    if(distance(myColor, platformColor) > 20)
+    if(distance(myColor, platformColor,level.number) > 20)
       this.pos = newPos;
     else{
       document.getElementById("textPlace").innerHTML = "";
@@ -608,15 +608,18 @@ function compareHexColor(c1, c2) {
   return hexStr;
 }
 
-function distance(c1, c2) {
+function distance(c1, c2, n) {
   var temp1 = hexToRgb(c1);
   var temp2 = hexToRgb(c2);
   var toReturn = Math.sqrt(Math.pow((temp1.r-temp2.r),2)+Math.pow((temp1.g-temp2.g),2)+Math.pow((temp1.b-temp2.b),2));
   if(toReturn<20 && timegap>300){
-      if(this.number >1)
+    console.log(n);
+      if(n >1){
+       console.log(20-toReturn);
        score += 20-toReturn;
        timegap = 0;
      }
+  }
   return toReturn;
 }
 
