@@ -164,7 +164,7 @@ function Door(pos, ch) {
     this.color = "#00FF00";
     this.type = "door door8";
   } else if (ch == "p") {
-    this.color = "#0098FF";
+    this.color = "#0099FF";
     this.type = "door door9";
   } else if (ch == "m") {
     this.color = "#FF00A3";
