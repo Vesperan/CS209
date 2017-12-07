@@ -352,14 +352,6 @@ Level.prototype.animate = function(step, level, keys) {
   if(level.number==1)
     bla = whi = 1;
 
-  if(level.number==3){
-   document.getElementById("winning").style.display = "inline";
-   document.getElementById("winning").innerHTML = "You Win!";
-   document.getElementById("wheelimg").style.display = "inline";
-   document.getElementById("wheelimg").style.height = 300;
-   document.getElementById("wheelimg").style.width = 300;
-  }
-
   if(bla == 1)
     document.getElementById("bla").style.visibility = "visible";
   else
