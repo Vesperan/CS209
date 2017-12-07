@@ -304,14 +304,16 @@ Level.prototype.obstacleAt = function(pos, size) {
   }
 };
 
-Level.prototype.actorAtSpot = function(pos, size) {
+Level.prototype.actorAtSpot = function(pos, size) { //.8, 1.5
   for (var i = 0; i < this.actors.length; i++) {
     var other = this.actors[i];
-    if (pos.x + size.x > other.pos.x &&
+    if (size != other.size &&
+      pos.x + size.x > other.pos.x &&
         pos.x < other.pos.x + other.size.x &&
         pos.y + size.y > other.pos.y &&
-        pos.y < other.pos.y + other.size.y)
+        pos.y < other.pos.y + other.size.y){
       return other;
+    }
   }
 };
 
@@ -336,11 +338,12 @@ Level.prototype.animate = function(step, level, keys) {
   if(level.number == 2 && mess2 == 1)
     document.getElementById("textPlace").innerHTML = "You collected all the primary and secondary colors! Your palette has been upgraded. When you pass through a door or stand on a platform, you'll get points based on how close you are to the correct color.";
 
-  if(level.number<2){
+  if(level.number<2 || level.number>2){
     document.getElementById("base").style.display = "none";
     document.getElementById("wheelimg").style.display = "none";
-//    document.getElementById("wheelimg").style.filter  = 'alpha(opacity=0)';
+    document.getElementById("scoreboard").style.display = "none";
   } else {
+    document.getElementById("scoreboard").style.display = "inline";
     document.getElementById("scoreboard").innerHTML = "Score: " + Math.trunc(score);
     document.getElementById("base").style.display = "inline";
     document.getElementById("wheelimg").style.display = "inline";
@@ -348,6 +351,14 @@ Level.prototype.animate = function(step, level, keys) {
 }
   if(level.number==1)
     bla = whi = 1;
+
+  if(level.number==3){
+   document.getElementById("winning").style.display = "inline";
+   document.getElementById("winning").innerHTML = "You Win!";
+   document.getElementById("wheelimg").style.display = "inline";
+   document.getElementById("wheelimg").style.height = 300;
+   document.getElementById("wheelimg").style.width = 300;
+  }
 
   if(bla == 1)
     document.getElementById("bla").style.visibility = "visible";
@@ -434,7 +445,7 @@ Player.prototype.moveX = function(step, level, keys) {
   var motion = new Vector(this.speed.x * step, 0);
   var newPos = this.pos.plus(motion);
   var obstacle = level.obstacleAt(newPos, this.size);
-  
+
   if (obstacle != null && obstacle != "wall" && obstacle != "lava" && obstacle.type.substr(0,4) == "door") {
   var myColor = document.documentElement.style.getPropertyValue(`--base`).substr(1,6);
   var doorColor = obstacle.color.substr(1,6);
@@ -533,7 +544,7 @@ Player.prototype.act = function(step, level, keys) {
 Level.prototype.playerTouched = function(type, actor) {
   if (type == "lava") {
     this.status = "lost";
-    this.finishDelay = .5;
+    this.finishDelay = .2;
   } else if (type == "coin") {
     if(this.number >1){
     score += 20;

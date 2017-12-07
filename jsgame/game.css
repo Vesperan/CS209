@@ -15,7 +15,7 @@
                 table-layout: fixed;
                 border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava          { background: rgb(255, 100, 100); }
+.lava          { background: #FFFFC0; opacity: .5}
 .wall          { background: #646464;   }
 
 .paint  {background: #000000; border-radius: 50%;} /* Black */
@@ -124,6 +124,17 @@ font-weight: 400;
 width: 600px;
 }
 
+.winstuff {
+position: fixed;
+top: 300px;
+left: 300px;
+color: #000000;
+font: Garamond;
+font-size: 25px;
+font-weight: 400;
+width: 600px;
+}
+
 .container {
     position: absolute;
     left: 30px;
@@ -146,7 +157,7 @@ img {
 }
 
 .lost .player {
-  background: rgb(160, 64, 64);
+  opacity: .3;
 }
 
 .won .player {
