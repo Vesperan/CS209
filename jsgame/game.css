@@ -38,6 +38,9 @@
 .door6 {background: #FF0000;} /* Red */
 .door7 {background: #FFFF00;} /* Yellow */
 .door8 {background: #00FF00;} /* Green */
+.door9 {background: #0098FF;} /* light blue */
+.door10 {background: #FF00A3;} /* Green */
+.door11 {background: #A100FF;} /* Green */
 
 .platform {background: #000000;}
 .platform2 {background: #FFFFFF;} /* White */
@@ -47,6 +50,9 @@
 .platform6 {background: #FF0000;} /* Red */
 .platform7 {background: #FFFF00;} /* Yellow */
 .platform8 {background: #00FF00;} /* Green */
+.platform9 {background: #ADFF00;} /* seafoam green */
+.platform10 {background: #FF6F00;} /* orange */
+.platform11 {background: #00FFB1;} /* Green */
 
 .actor  { position: absolute;  }
 .coin   { background: rgb(241, 229, 89); border-radius: 50%;}

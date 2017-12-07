@@ -44,9 +44,9 @@ function Level(plan, num) {
         fieldType = "wall";
       if (ch == "!")
         fieldType = "lava";
-      if (ch == "q" || ch == "w" || ch == "e" || ch == "r" || ch == "t" || ch == "y" || ch == "u" || ch == "i" || ch == "p")
+      if (ch == "q" || ch == "w" || ch == "e" || ch == "r" || ch == "t" || ch == "y" || ch == "u" || ch == "i" || ch == "p" || ch == "m" || ch == "n")
         fieldType = "door";
-     if (ch == "a" || ch == "s" || ch == "d" || ch == "f" || ch == "g" || ch == "h" || ch == "j" || ch == "k" || ch == "l")
+     if (ch == "a" || ch == "s" || ch == "d" || ch == "f" || ch == "g" || ch == "h" || ch == "j" || ch == "k" || ch == "l" || ch == "c"  || ch == "z")
        fieldType = "platform";
       gridLine.push(fieldType);
     }
@@ -80,8 +80,8 @@ var actorChars = {
   "o": Coin,
   "=": Lava, "|": Lava, "v": Lava,
   "1": Paint, "2": Paint, "3": Paint, "4": Paint, "5": Paint, "6": Paint, "7": Paint, "8": Paint,
-  "q": Door, "w": Door, "e": Door, "r": Door, "t": Door, "y": Door, "u": Door,  "i": Door, "p": Door, 
-  "a": Platform, "s": Platform, "d": Platform, "f": Platform, "g": Platform, "h": Platform, "j": Platform, "k": Platform, "l": Platform, 
+  "q": Door, "w": Door, "e": Door, "r": Door, "t": Door, "y": Door, "u": Door,  "i": Door, "p": Door, "m": Door,  "n": Door,  
+  "a": Platform, "s": Platform, "d": Platform, "f": Platform, "g": Platform, "h": Platform, "j": Platform, "k": Platform, "l": Platform, "c": Platform, "z": Platform, 
 };
 
 function Player(pos) {
@@ -163,6 +163,15 @@ function Door(pos, ch) {
   } else if (ch == "i") {
     this.color = "#00FF00";
     this.type = "door door8";
+  } else if (ch == "p") {
+    this.color = "#0098FF";
+    this.type = "door door9";
+  } else if (ch == "m") {
+    this.color = "#FF00A3";
+    this.type = "door door10";
+  } else if (ch == "n") {
+    this.color = "#A100FF";
+    this.type = "door door11";
   }
 }
 
@@ -193,6 +202,15 @@ function Platform(pos, ch) {
   } else if (ch == "k") {
     this.color = "#00FF00";
     this.type = "platform platform8";
+  } else if (ch == "l") {
+    this.color = "#ADFF00";
+    this.type = "platform platform9";
+  } else if (ch == "c") {
+    this.color = "#FF6F00";
+    this.type = "platform platform10";
+  } else if (ch == "z") {
+    this.color = "#00FFB1";
+    this.type = "platform platform11";
   }
 }
 
@@ -782,5 +800,5 @@ function runGame(plans, Display) {
         console.log("You win!");
     });
   }
-  startLevel(0);
+  startLevel(2);
 }
